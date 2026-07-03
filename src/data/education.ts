@@ -3,21 +3,32 @@ import type { EducationItem } from "@/types";
 export const educationData: EducationItem[] = [
   {
     id: "edu-1",
-    degree: "Bachelor of Technology",
+    degree: "Bachelor of Technology (B.Tech)",
     field: "Computer Science & Engineering",
-    institution: "Your College Name",
-    cgpa: "8.5 CGPA",
-    duration: "2022 — 2026",
+    institution: "Government College of Engineering, Chaibasa",
+    cgpa: "9.24 CGPA",
+    duration: "2020 — 2023 (Lateral Entry)",
     description:
-      "Focused on data structures, web development, and software engineering fundamentals with hands-on project work.",
+      "Specialized in Computer Science with a focus on Data Structures & Algorithms, Web Development, Database Management Systems, Operating Systems, and Software Engineering. Completed multiple full-stack development projects using modern technologies.",
   },
   {
     id: "edu-2",
-    degree: "Senior Secondary (XII)",
-    field: "Science (PCM)",
+    degree: "Diploma",
+    field: "Computer Science & Engineering",
+    institution: "Government Women's Polytechnic, Jamshedpur",
+    cgpa: "85.56%",
+    duration: "2017 — 2020",
+    description:
+      "Developed a strong foundation in programming, computer fundamentals, networking, databases, mathematics, and software development through academic coursework and practical laboratory sessions.",
+  },
+  {
+    id: "edu-3",
+    degree: "Matriculation",
+    field: "Secondary Education",
     institution: "Your School Name",
-    cgpa: "92%",
-    duration: "2020 — 2022",
-    description: "Built a strong foundation in mathematics and computer science.",
+    cgpa: "87.60%",
+    duration: "2017",
+    description:
+      "Completed secondary education with distinction, building a strong academic foundation in mathematics, science, and analytical problem-solving.",
   },
 ];

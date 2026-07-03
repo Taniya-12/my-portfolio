@@ -10,9 +10,9 @@ export const navItems: NavItem[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { id: "linkedin", label: "LinkedIn", href: "https://linkedin.com/in/your-profile" },
-  { id: "github", label: "GitHub", href: "https://github.com/your-username" },
-  { id: "leetcode", label: "LeetCode", href: "https://leetcode.com/your-username" },
-  { id: "gfg", label: "GeeksforGeeks", href: "https://geeksforgeeks.org/user/your-username" },
-  { id: "email", label: "Email", href: "mailto:taniya.kumari@example.com" },
+  { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/taniya-k/" },
+  { id: "github", label: "GitHub", href: "https://github.com/Taniya-12" },
+  { id: "leetcode", label: "LeetCode", href: "https://leetcode.com/u/taniya_1605/" },
+  { id: "gfg", label: "GeeksforGeeks", href: "https://www.geeksforgeeks.org/profile/taniyakumari646" },
+  { id: "email", label: "Email", href: "mailto:taniyakumari646@gmail.com" },
 ];

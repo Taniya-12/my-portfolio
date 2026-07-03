@@ -61,7 +61,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           ))}
         </div>
 
-        <div className="flex items-center gap-3 mt-5">
+        {/* <div className="flex items-center gap-3 mt-5">
           <motion.a
             href={project.githubUrl}
             target="_blank"
@@ -84,7 +84,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               <ExternalLink size={15} /> Live Demo
             </motion.a>
           )}
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );
