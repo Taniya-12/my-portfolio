@@ -20,7 +20,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <span className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(120deg,rgba(255,107,0,0.35),transparent_40%)]" />
 
-      <div className="relative h-48 overflow-hidden">
+      {/* <div className="relative h-48 overflow-hidden">
         <motion.img
           src={project.image}
           alt={project.title}
@@ -32,7 +32,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent" />
-      </div>
+      </div> */}
 
       <div className="relative p-6">
         <h3 className="font-heading font-semibold text-xl text-white">
