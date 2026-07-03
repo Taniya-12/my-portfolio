@@ -4,11 +4,64 @@ import { Send, Check } from "lucide-react";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (status === "sending") return;
+
+    const trimmedName = name.trim();
+    const trimmedEmail = email.trim();
+    const trimmedMessage = message.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!trimmedName) {
+      setError("Name is required.");
+      return;
+    }
+
+    if (!emailPattern.test(trimmedEmail)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    if (trimmedMessage.length < 10) {
+      setError("Message must be at least 10 characters.");
+      return;
+    }
+
+    setError("");
     setStatus("sending");
-    window.setTimeout(() => setStatus("sent"), 1200);
+
+    try {
+      const response = await fetch("/.netlify/functions/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: trimmedName,
+          email: trimmedEmail,
+          message: trimmedMessage,
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        throw new Error(data?.error || "Unable to send your message right now.");
+      }
+
+      setStatus("sent");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      setStatus("idle");
+      setError(err instanceof Error ? err.message : "Unable to send your message right now.");
+    }
   }
 
   return (
@@ -22,6 +75,8 @@ export default function ContactForm() {
           name="name"
           type="text"
           required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           placeholder="Your name"
           className="w-full rounded-lg bg-white/5 border border-border px-4 py-2.5 text-white placeholder:text-secondary/60 focus:border-accent outline-none transition-colors"
         />
@@ -36,6 +91,8 @@ export default function ContactForm() {
           name="email"
           type="email"
           required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="you@example.com"
           className="w-full rounded-lg bg-white/5 border border-border px-4 py-2.5 text-white placeholder:text-secondary/60 focus:border-accent outline-none transition-colors"
         />
@@ -49,11 +106,16 @@ export default function ContactForm() {
           id="message"
           name="message"
           required
+          minLength={10}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           rows={4}
           placeholder="Tell me about your project..."
           className="w-full rounded-lg bg-white/5 border border-border px-4 py-2.5 text-white placeholder:text-secondary/60 focus:border-accent outline-none transition-colors resize-none"
         />
       </div>
+
+      {error && <p className="text-sm text-red-400">{error}</p>}
 
       <motion.button
         type="submit"
