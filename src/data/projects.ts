@@ -125,6 +125,31 @@ export const projectsData: ProjectItem[] = [
     githubUrl: "https://github.com/your-username/wizrspace",
     liveUrl: "https://your-demo-link.com",
   },
+  {
+  id: "proj-6",
+  title: "Developer Portfolio",
+  description:
+    "A modern, responsive portfolio website showcasing my professional experience, technical skills, projects, and achievements. Built with performance, accessibility, and clean architecture in mind.",
+  image: "/projects/portfolio.jpg",
+  features: [
+    "Responsive design with smooth animations using Framer Motion.",
+    "Interactive timeline for experience, education, and technical skills.",
+    "Dynamic project showcase powered by reusable data-driven components.",
+    "Integrated contact form using Netlify Functions and Nodemailer.",
+    "SEO-friendly architecture with optimized performance and clean UI.",
+  ],
+  techStack: [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Netlify Functions",
+    "Nodemailer",
+  ],
+  githubUrl: "https://github.com/Taniya-12/your-portfolio-repo",
+  liveUrl: "https://your-portfolio.netlify.app",
+},
 
   // Personal Project Example (Uncomment or replace later)
   /*

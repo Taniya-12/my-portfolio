@@ -5,7 +5,7 @@ export const personalInfo = {
   taglines: [
     "Full Stack Developer",
     "React & Next.js Developer",
-    "Frontend Specialist",
+    "Frontend Developer",
     "Node.js Developer",
     "AI-Accelerated Developer",
   ],
@@ -15,7 +15,7 @@ export const personalInfo = {
 
   heroDescription:
     "I build modern, scalable web applications from frontend to backend-crafting intuitive user experiences with React and Next.js while developing robust APIs, serverless solutions, and cloud-powered services. I leverage technologies like Node.js, Supabase, AWS, and AI-assisted development tools to deliver secure, high-performance applications with clean architecture and exceptional user experiences.", resumeUrl: "/resume.pdf",
-  profileImage: "/profile.jpg",
+  profileImage: "/profile.png",
   availability: "Open to Work",
   location: "India",
   email: "taniyakumari646@gmail.com",
